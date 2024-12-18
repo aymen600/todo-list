@@ -8,7 +8,7 @@ COPY CSS /usr/share/nginx/html/CSS/
 COPY JS /usr/share/nginx/html/JS/
 
 # Nginx expose le port 80 par défaut
-EXPOSE 80
+EXPOSE 8080
 
 # Démarre le serveur Nginx
 CMD ["nginx", "-g", "daemon off;"]
