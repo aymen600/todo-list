@@ -7,11 +7,9 @@ COPY index.html /usr/share/nginx/html/
 COPY CSS /usr/share/nginx/html/CSS/
 COPY JS /usr/share/nginx/html/JS/
 
-# Étape 3 : Ajouter la configuration personnalisée
-COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Nginx expose le port 80 par défaut
-EXPOSE 8080
+EXPOSE 80
 
 # Démarre le serveur Nginx
 CMD ["nginx", "-g", "daemon off;"]
