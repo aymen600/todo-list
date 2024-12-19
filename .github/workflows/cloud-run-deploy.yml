@@ -32,6 +32,13 @@ jobs:
         run: |
           gcloud auth configure-docker
 
+      # Étape : Afficher les variables
+      - name: Debug variables
+        run: |
+          echo "SERVICE_NAME: $SERVICE_NAME"
+          echo "GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}"
+          echo "DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}"
+
       - name: Build and Push Docker Image
         run: |
           docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest .
